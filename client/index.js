@@ -68,7 +68,7 @@ app.post('/add-workout', (req, res) => {
 });
 
 // fetch all Primary Positions
-app.post('/get-movements', (req, res) => {
+app.get('/get-movements', (req, res) => {
   const query = 'SELECT * FROM ref_component_type WHERE parent_id IS NULL';
     connection.query(query, (err, results, fields) => {
       if (err) {
@@ -88,7 +88,7 @@ app.post('/get-movements', (req, res) => {
 
 
 // fetch Components
-app.post('/get-components/:parent_id', (req, res) => {
+app.get('/get-components/:parent_id', (req, res) => {
   const query = 'SELECT * FROM ref_component_type WHERE parent_id = ?';
     connection.query(query, {"parent_id": req.params.parent_id},(err, results, fields) => {
       if (err) {
@@ -107,7 +107,7 @@ app.post('/get-components/:parent_id', (req, res) => {
 });
 
 // fetch all workouts
-app.post('/get-workouts', (req, res) => {
+app.get('/get-workouts', (req, res) => {
   const query = 'SELECT * FROM workout';
     connection.query(query, (err, results, fields) => {
       if (err) {

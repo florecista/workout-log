@@ -10,6 +10,7 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 RUN npm install
+EXPOSE 4000
 
 # Copy app source from current host directory to container working directory
 COPY . .
