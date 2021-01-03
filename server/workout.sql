@@ -134,15 +134,21 @@ INSERT INTO ref_component_type (id, parent_id, name) VALUES (10, 1, 'Post');
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (11, 1, 'Pump Fake');
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (12, 1, 'Wrist Peel');
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (13, 1, 'Wrist Control');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (14, 1, 'Snap Down Single Post');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (15, 1, 'Snap Down Double Post');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (16, 1, 'Change Level under Single Post');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (17, 1, 'Change Level under Double Post');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (18, 1, 'Collar Tie');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (19, 1, 'Inside Tie');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (20, 1, 'Elbow Pass');
-INSERT INTO ref_component_type (id, parent_id, name) VALUES (21, 1, 'Slide By');
-
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (14, 1, 'Wrist Exchange');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (15, 1, 'Snap Down Single Post');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (16, 1, 'Snap Down Double Post');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (17, 1, 'Change Level under Single Post');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (18, 1, 'Change Level under Double Post');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (19, 1, 'Collar Tie');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (20, 1, 'Inside Tie');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (21, 1, 'Elbow Pass');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (22, 1, 'Slide By - Outside');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (23, 1, 'Slide By - Pull Inside');
+INSERT INTO ref_component_type (id, parent_id, name, description) VALUES (24, 1, 'Punch Hook', 'Strong Palm to opponents elbow of his Collar Tie and hooking upwards taking the Underhook');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (26, 1, 'Underhook');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (27, 1, 'Overhook');
+INSERT INTO ref_component_type (id, parent_id, name, description) VALUES (28, 1, 'Snap Down', 'Typically a starting position of Collar Tie with Inside Tie');
+INSERT INTO ref_component_type (id, parent_id, name, description) VALUES (29, 1, 'Steering Wheel', 'Typically a starting position of Collar Tie with Inside Tie');
 
 COMMIT;
 
