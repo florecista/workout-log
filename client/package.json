@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-microservice",
+  "name": "workout-log",
   "version": "1.0.0",
   "description": "Running a nodejs application with mysql database as microservices using docker",
   "main": "index.js",
