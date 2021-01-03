@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2577
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12640\viewh12440\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 docker --version\
+\
+docker-compose --version\
+\
+# Test Docker can run a container\
+docker run -d -p 80:80 --name webserver nginx\
+\
+cd server\
+\
+docker build -t workout-mysql .\
+\
+docker run -d \\                              \
+--publish 6603:3306 \\\
+--volume=/Users/<user-login>/Projects/workout-log/server/data:/var/lib/mysql \\\
+--name=workout-mysql workout-mysql\
+\
+docker logs workout-mysql\
+\
+cd ../client\
+\
+docker build -t workout-nodejs .\
+\
+docker run -d \\                            \
+--publish 4000:4000 \\\
+-e MYSQL_USER='root' \\\
+-e MYSQL_PASSWORD='W0rk0ut!' \\\
+-e MYSQL_DATABASE='workout' \\\
+-e MYSQL_HOST='172.17.0.2' \\\
+--link workout-mysql:db \\\
+--name=workout-nodejs workout-nodejs\
+\
+# Get index page\
+curl -X GET localhost:4000\
+\{"success":true,"message":"Hello world"\}\
+\
+# Get options for First Dropdown\
+curl -X POST localhost:4000/get-movements   \
+\{"success":true,"result":[\{"id":1,"parent_id":null,"name":"Set Up","description":null\},\{"id":2,"parent_id":null,"name":"Standing","description":null\},\{"id":3,"parent_id":null,"name":"Top Position","description":null\},\{"id":4,"parent_id":null,"name":"Bottom Position","description":null\}]\}\
+\
+# Get options for Second Dropdown\
+curl -X POST localhost:4000/get-components/1\
+\{"success":true,"result":[\{"id":5,"parent_id":1,"name":"Punch","description":null\},\{"id":6,"parent_id":1,"name":"Push","description":null\},\{"id":7,"parent_id":1,"name":"Pull","description":null\},\{"id":8,"parent_id":1,"name":"Press","description":null\},\{"id":9,"parent_id":1,"name":"Pass","description":null\},\{"id":10,"parent_id":1,"name":"Post","description":null\},\{"id":11,"parent_id":1,"name":"Pump Fake","description":null\},\{"id":12,"parent_id":1,"name":"Wrist Peel","description":null\},\{"id":13,"parent_id":1,"name":"Wrist Control","description":null\},\{"id":14,"parent_id":1,"name":"Snap Down Single Post","description":null\},\{"id":15,"parent_id":1,"name":"Snap Down Double Post","description":null\},\{"id":16,"parent_id":1,"name":"Change Level under Single Post","description":null\},\{"id":17,"parent_id":1,"name":"Change Level under Double Post","description":null\},\{"id":18,"parent_id":1,"name":"Collar Tie","description":null\},\{"id":19,"parent_id":1,"name":"Inside Tie","description":null\},\{"id":20,"parent_id":1,"name":"Elbow Pass","description":null\},\{"id":21,"parent_id":1,"name":"Slide By","description":null\}]\}                                             \
+\
+docker ps -aq\
+\
+Docker container ls\
+\
+docker container logs 29a1324d173d\
+\
+docker stop 29a1324d173d\
+\
+docker rm 29a1324d173d\
+\
+}
