@@ -120,7 +120,6 @@ ALTER TABLE `workout`
 --
 ALTER TABLE `exercise`
   ADD CONSTRAINT `exercise_ibfk_1` FOREIGN KEY (`workout_id`) REFERENCES `workout` (`id`);
-COMMIT;
 
 INSERT INTO ref_component_type (id, name) VALUES (1, 'Set Up');
 INSERT INTO ref_component_type (id, name) VALUES (2, 'Standing');
@@ -143,6 +142,9 @@ INSERT INTO ref_component_type (id, parent_id, name) VALUES (18, 1, 'Collar Tie'
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (19, 1, 'Inside Tie');
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (20, 1, 'Elbow Pass');
 INSERT INTO ref_component_type (id, parent_id, name) VALUES (21, 1, 'Slide By');
+
+
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
