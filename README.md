@@ -7,7 +7,7 @@ Edit path and details where appropriate.
 ```
 cd server
 docker build -t workout-mysql .
-docker run -d \                              
+docker run -d \
 --publish 6603:3306 \
 --volume=/Users/<user-login>/Projects/workout-log/server/data:/var/lib/mysql \
 --name=workout-mysql workout-mysql
@@ -18,7 +18,7 @@ docker run -d \
 ```
 cd ../client
 docker build -t workout-nodejs .
-docker run -d \                            
+docker run -d \
 --publish 4000:4000 \
 -e MYSQL_USER='root' \
 -e MYSQL_PASSWORD='W0rk0ut!' \
