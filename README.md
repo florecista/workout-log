@@ -2,6 +2,8 @@
 
 ### Commands to build and start the MySQL server
 
+Edit path and details where appropriate.
+
 ```
 cd server
 docker build -t workout-mysql .
