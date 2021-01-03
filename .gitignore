@@ -107,4 +107,4 @@ dist
 .DS_Store
 
 # MySQL Data
-server/data/*
+backend/data/*

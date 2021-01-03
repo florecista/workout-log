@@ -5,7 +5,7 @@
 Edit path and details where appropriate.
 
 ```
-cd server
+cd backend
 docker build -t workout-mysql .
 docker run -d \
 --publish 6603:3306 \
@@ -16,7 +16,7 @@ docker run -d \
 ### Commands to build and start the NodeJS server
 
 ```
-cd ../client
+cd ../middle
 docker build -t workout-nodejs .
 docker run -d \
 --publish 4000:4000 \
