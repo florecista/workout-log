@@ -150,6 +150,20 @@ INSERT INTO ref_component_type (id, parent_id, name) VALUES (27, 1, 'Overhook');
 INSERT INTO ref_component_type (id, parent_id, name, description) VALUES (28, 1, 'Snap Down', 'Typically a starting position of Collar Tie with Inside Tie');
 INSERT INTO ref_component_type (id, parent_id, name, description) VALUES (29, 1, 'Steering Wheel', 'Typically a starting position of Collar Tie with Inside Tie');
 
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (30, 2, 'Single Leg');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (31, 2, 'Double Leg');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (32, 2, 'High Crotch');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (33, 2, 'Hip Toss');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (34, 2, 'Flying Mare');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (35, 2, 'Firemans Carry');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (36, 2, 'Inside Trip');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (37, 2, 'Outside Trip');
+
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (38, 3, 'Cross Face');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (39, 3, 'Bump Forward');
+INSERT INTO ref_component_type (id, parent_id, name) VALUES (40, 3, 'Spiral Ride');
+
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
