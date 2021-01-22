@@ -89,8 +89,8 @@ app.get('/get-movements', (req, res) => {
 
 // fetch Components
 app.get('/get-components/:parent_id', (req, res) => {
-  const query = 'SELECT * FROM ref_component_type WHERE parent_id = ?';
-    connection.query(query, {"parent_id": req.params.parent_id},(err, results, fields) => {
+    let query = "SELECT * FROM ref_component_type WHERE parent_id = " + req.params.parent_id;
+    connection.query(query,(err, results) => {
       if (err) {
         console.error(err);
         res.json({
